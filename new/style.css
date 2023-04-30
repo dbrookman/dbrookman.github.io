@@ -120,3 +120,12 @@ footer {
 	margin-bottom: 3em;
 	font-size: 0.6em;
 }
+
+#social {
+	margin-bottom: 1.5em;
+}
+
+#social img {
+	width: 30px;
+	margin: 0 1em;
+}
