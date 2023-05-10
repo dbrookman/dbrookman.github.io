@@ -54,7 +54,8 @@ header a {
 header a:hover {
 	text-decoration: underline;
 }
-header li {
+
+header ul {
 	padding-bottom: 1em;
 }
 
@@ -63,7 +64,7 @@ main {
 	padding: 0 2em;
 }
 
-ul {
+li, ul {
 	list-style-type: none;
 }
 
