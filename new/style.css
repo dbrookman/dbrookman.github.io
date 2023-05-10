@@ -45,6 +45,16 @@ header img {
 	filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.3));
 }
 
+header a {
+	color: blue;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+header a:hover {
+	text-decoration: underline;
+}
+
 main {
 	flex: 1;
 	padding: 0 2em;
