@@ -1,0 +1,390 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, p, ul, figure {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+address {
+	font-style: normal;
+}
+@font-face {
+	font-family: "Now";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/assets/fonts/Now-Bold.woff2") format("woff2"), url("/assets/fonts/Now-Bold.woff") format("woff");
+	font-display: swap;
+}
+@font-face {
+	font-family: "Now";
+	font-style: normal;
+	font-weight: 300;
+	src: url("/assets/fonts/Now-Light.woff2") format("woff2"), url("/assets/fonts/Now-Light.woff") format("woff");
+	font-display: swap;
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/assets/fonts/Inter-Regular.woff2") format("woff2"), url("/assets/fonts/Inter-Regular.woff") format("woff");
+	font-display: swap;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: "Inter", -apple-system, "Lucida Grande", sans-serif;
+	font-feature-settings: "ss01" 1, "cv01" 1;
+	min-height: 100vh;
+	overflow-x: hidden;
+	background: #f3f3f3;
+	color: #2b2b2b;
+}
+#site-title, #page-title {
+	position: fixed;
+	white-space: nowrap;
+	writing-mode: vertical-lr;
+	font-family: "Now", -apple-system, "Arial", sans-serif;
+	color: #686868;
+	line-height: 1;
+}
+.sub-header {
+	font-size: 1.25rem;
+	font-weight: 300;
+	margin-left: 2rem;
+}
+.main-header {
+	font-size: 2rem;
+	font-weight: 700;
+}
+#site-header {
+	display: flex;
+	font-family: "Now", -apple-system, "Arial", sans-serif;
+	padding: 1rem;
+	text-transform: uppercase;
+	line-height: 1;
+}
+#site-header nav {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: flex-end;
+	font-weight: 300;
+	white-space: nowrap;
+	text-transform: lowercase;
+}
+#site-header nav a:not(:last-child) {
+	margin-right: 1em;
+}
+main {
+	flex: 1;
+}
+main > header {
+	padding-bottom: 1rem;
+}
+main section#selected-works article {
+	padding-left: 6rem;
+	padding-right: 6rem;
+}
+main > section:not(#selected-works) {
+	padding-left: 6rem;
+	padding-right: 6rem;
+}
+#about section {
+	margin-bottom: 1rem;
+	line-height: 1.5;
+	font-size: 0.75rem;
+}
+#about section header > h2::after {
+	content: ":";
+}
+#about section header {
+	margin-bottom: 1em;
+}
+#about section .flex-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 3.5em;
+}
+#about section .flex-list li {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	flex-direction: column;
+	padding-left: 0;
+}
+#about section .flex-list li::before {
+	content: "";
+}
+#about section li {
+	padding-left: 3.5em;
+}
+#about section li::before {
+	display: block;
+	float: left;
+	content: "– ";
+	margin-left: -1em;
+}
+#about section li img {
+	display: flex;
+	align-self: center;
+	max-height: 24px;
+	max-width: 24px;
+}
+#about mark {
+	display: block;
+}
+#skills {
+	padding: 1rem 0;
+}
+/*
+#interests {
+padding-bottom: 1rem;
+}
+ */
+#selected-works ul {
+	display: flex;
+	flex-flow: column nowrap;
+}
+#selected-works li {
+	display: inline-block;
+	margin-bottom: 2.5rem;
+}
+#selected-works article {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 1.75rem;
+	padding-bottom: 1.75rem;
+	background: transparent;
+	transition: background 0.25s;
+}
+#selected-works article header {
+	display: block;
+	margin-right: 1.5rem;
+	font-size: 0.9rem;
+}
+#selected-works article header h3 {
+	font-weight: 400;
+	width: max-content;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid lightgrey;
+}
+#selected-works article header .year, #selected-works article header .material {
+	color: #686868;
+}
+#selected-works article header .year {
+	white-space: nowrap;
+}
+#selected-works article header .material {
+	display: block;
+	font-size: 0.75rem;
+	white-space: nowrap;
+	padding-top: 0.5em;
+}
+#selected-works article figure {
+	position: relative;
+	margin-left: 18%;
+	background: black;
+	transition: box-shadow 0.25s ease-out, transform 0.1s linear;
+	box-shadow: 0 0 3px 0 black;
+	transform: scale(1);
+}
+#selected-works article figure img, #selected-works article figure video {
+	max-height: 450px;
+	float: right;
+}
+#selected-works article figure video {
+	position: absolute;
+	visibility: hidden;
+	max-height: 100%;
+	min-width: 100%;
+}
+#selected-works article.has-video-excerpt img, #selected-works article.has-video-excerpt video {
+	max-height: 280px !important;
+}
+#selected-works article.playing {
+	background: rgba(0, 0, 0, 0.05);
+}
+#selected-works article.playing h3::before {
+	content: "▶";
+	position: absolute;
+	margin-left: -1.2rem;
+	color: #969696;
+	animation: 0.5s infinite alternate play-indicator-bounce ease-in-out;
+}
+#selected-works article.playing figure {
+	transform: scale(1.01);
+	box-shadow: 0 0 8px 0 black;
+}
+@keyframes play-indicator-bounce {
+	from {
+		margin-left: -1.3em;
+	}
+	to {
+		margin-left: -1.15em;
+	}
+}
+#site-footer {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	align-items: center;
+}
+#site-footer .dan-elsewhere {
+	display: flex;
+}
+#site-footer .dan-elsewhere li {
+	display: inherit;
+	list-style: none;
+}
+#site-footer .dan-elsewhere a {
+	height: 2rem;
+	width: 2rem;
+	margin: 0.5rem;
+	transition: transform 0.075s linear;
+}
+#site-footer .dan-elsewhere a:hover {
+	transform: scale(1.125);
+}
+#site-footer .dan-elsewhere a object {
+	pointer-events: none;
+}
+#site-footer time {
+	font-size: 0.75rem;
+}
+img, video {
+	max-width: 100%;
+	align-self: start;
+}
+a {
+	text-decoration: none;
+	color: #004bff;
+}
+a:hover {
+	text-decoration: underline;
+}
+mark {
+	background: transparent;
+	font-weight: 700;
+}
+p {
+	margin-bottom: 1rem;
+}
+ul, ol {
+	list-style-type: none;
+	list-style-position: inside;
+}
+@media screen and (max-width: 900px) {
+	#selected-works article header h3, #selected-works article header .material {
+		width: auto;
+	}
+}
+@media screen and (max-width: 760px) {
+	#about section .flex-list {
+		padding: 0 1.75em;
+	}
+}
+@media screen and (max-width: 540px) {
+	#site-title, #page-title {
+		position: initial;
+		writing-mode: horizontal-tb;
+		text-align: center;
+		white-space: normal;
+		padding-bottom: 0.5rem;
+	}
+	#site-title {
+		font-size: 2rem;
+		font-weight: 700;
+		margin-left: 0;
+	}
+	#page-title {
+		font-size: 1.25rem;
+		font-weight: 300;
+		text-transform: initial;
+	}
+	#site-header {
+		position: inital;
+		padding: 1.75rem 1rem;
+		align-items: center;
+		flex-direction: column;
+	}
+	#site-header nav {
+		justify-content: center;
+	}
+	#site-header nav a:not(:last-child) {
+		margin-right: 1.5rem;
+	}
+	main section.error {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	main > section > header {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		padding-top: 1rem;
+	}
+	main section#selected-works > header, main section#selected-works article {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	main > section:not(#selected-works) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	#site-footer {
+		border-top: 0.15rem solid black;
+		padding: 1.25rem 0 1.5rem;
+		margin: 2rem 5rem 0;
+	}
+	#about section .flex-list {
+		padding: 0;
+	}
+	#about section li {
+		padding-left: 1.25em;
+	}
+	#selected-works li {
+		margin-bottom: 1.5rem;
+	}
+	#selected-works article {
+		flex-direction: column-reverse;
+		padding-top: 0;
+		padding-bottom: 1.25rem;
+	}
+	#selected-works article header {
+		margin: 0;
+		padding: 0;
+	}
+	#selected-works article header h3, #selected-works article header .material {
+		display: block;
+		text-align: center;
+		width: auto;
+		border: none;
+	}
+	#selected-works article header .material {
+		padding: 0;
+		white-space: normal;
+	}
+	#selected-works article figure {
+		display: flex;
+		justify-content: center;
+		margin-left: 0;
+		margin-bottom: 1.5rem;
+		transform: none;
+	}
+	#selected-works article.has-video-excerpt img, #selected-works article.has-video-excerpt video {
+		max-height: 100% !important;
+	}
+	#selected-works article.has-video-excerpt.playing figure {
+		transform: none;
+	}
+}
+@media screen and (max-width: 330px) {
+	#about section .flex-list {
+		flex-direction: column;
+	}
+	#about section .flex-list li:not(:last-of-type) {
+		padding-bottom: 1em;
+	}
+}
