@@ -35,7 +35,7 @@ li, ul {
 
 header {
 	font-size: 1em;
-	padding: 2em 0;
+	padding: 3em 0 2em;
 }
 
 header h1#header-title {
@@ -72,12 +72,12 @@ main {
 	font-size: 1em;
 	text-decoration: none;
 	font-weight: normal;
-	padding-bottom: 2em;
+	padding-bottom: 3em;
 }
 
 .updates h2::before, .updates h2::after {
 	content: "↓";
-	padding: 0 1em;
+	padding: 0 2em;
 }
 
 ul.updates li:not(:last-child) {
