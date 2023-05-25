@@ -29,34 +29,37 @@ body {
 	text-align: center;
 }
 
-header {
-	font-size: 1em;
-	padding-top: 2em;
-	margin-bottom: 1.5em;
+li, ul {
+	list-style-type: none;
 }
 
-header h1 {
+header {
+	font-size: 1em;
+	padding: 2em 0;
+}
+
+header h1#header-title {
 	font-size: 3em;
 	font-weight: normal;
 }
 
-header img {
+header h1#header-title img {
 	width: 40px;
 	filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.3));
 }
 
-header a {
+header #header-links {
 	font-size: 1.5em;
+}
+
+header #header-links a {
+	padding: 0 1em;
 	color: blue;
 	text-decoration: none;
 }
 
-header a:hover {
+header #header-links a:hover {
 	text-decoration: underline;
-}
-
-header ul {
-	padding-bottom: 1em;
 }
 
 main {
@@ -64,59 +67,74 @@ main {
 	padding: 0 2em;
 }
 
-li, ul {
-	list-style-type: none;
+.updates h2 {
+	display: block;
+	font-size: 1em;
+	text-decoration: none;
+	font-weight: normal;
+	padding-bottom: 2em;
 }
 
-ul li a {
+.updates h2::before, .updates h2::after {
+	content: "↓";
+	padding: 0 1em;
+}
+
+ul.updates li:not(:last-child) {
+	  margin-bottom: 1.5em;
+}
+
+ul.updates li a {
 	display: block;
 	color: black;
 	text-decoration: none;
 	padding: 1.5em 1.5em;
+}
+ul.updates li a:not(:last-child) {
 	margin-bottom: 1.5em;
 }
 
-ul li a {
+ul.updates li a {
 	background: rgb(1,1,1,0.08);
 /*	background: #eee;*/
 }
 
-ul li a:hover {
+ul.updates li a:hover {
 	background: rgb(1,1,1,0.2);
 }
 
-ul li a:hover .title span {
+ul.updates li a:hover .title span {
 	text-decoration: underline;
 }
 
-ul .preview {
+ul.updates .preview {
 	display: block;
 	width: 100%;
 	margin-bottom: 1em;
 }
 
-ul .preview img {
+ul.updates .preview img {
 	max-width: 100%;
 }
 
-ul .title {
+ul.updates .title {
 	display: inline;
 	font-weight: bold;
 }
 
-ul li.music .title::before {
+ul.updates li.music .title::before {
 	content: "♫";
 }
 
-ul li.writing .title::before {
+ul.updates li.writing .title::before {
 	content: "✎";
 }
 
-ul .title span {
+ul.updates .title span {
 	color: blue;
 }
 
-ul .description {
+ul.updates .description {
 	display: block;
 	font-style: italic;
 }
@@ -131,15 +149,16 @@ ul .description {
 }
 
 footer {
-	margin-bottom: 3em;
-	font-size: 0.6em;
+	padding: 3em 0;
 }
 
 #social {
-	margin-bottom: 1.5em;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1em;
 }
 
 #social img {
-	width: 30px;
+	width: 40px;
 	margin: 0 1em;
 }
