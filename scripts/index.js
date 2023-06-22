@@ -40,9 +40,9 @@ if (textbox) {
 	var textWidthWithWhitepace = textbox.getBoundingClientRect().width - textWidth
 
 	var beforeText = addFlankingElements(header, flankingElementText)[0]
-
 	// account for how big the flanking elements are
 	var headerPadding = beforeText.getBoundingClientRect().width * 2
+
 	resizeHeader(headerPadding)
 	window.onresize = resizeHeader.bind("padding", headerPadding)
 }
