@@ -144,16 +144,5 @@ ul.updates .description {
 }
 
 footer {
-	padding: 3em 0;
-}
-
-#social {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 1em;
-}
-
-#social img {
-	width: 40px;
-	margin: 0 1em;
+	padding: 2em 0;
 }
